@@ -1,0 +1,16 @@
+.main{
+    height: 80vh;
+}
+
+.signup_patient{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+
+.signup_patient .field{
+    border: 2px solid var(--yellow);
+    width: 80%;
+}

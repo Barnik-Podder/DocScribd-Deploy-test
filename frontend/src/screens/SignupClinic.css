@@ -1,0 +1,40 @@
+.main{
+    height: 110vh;
+}
+
+.signup_clinic{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+
+.signup_clinic .field{
+    border: 2px solid var(--yellow);
+    width: 80%;
+}
+
+.clinicTiming{
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clinicTiming .from, .clinicTiming .to{
+    width: 40%;
+}
+
+@media only screen and (max-width: 688px) {
+    .clinicTiming{
+        flex-direction: column;
+        padding: 0px;
+    }
+    .clinicTiming .from, .clinicTiming .to{
+        width: 100%;
+    }
+    .signup_clinic .field{
+        width: 100%;
+    }
+}

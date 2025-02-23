@@ -1,0 +1,49 @@
+.container-signup{
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    background-color: transparent;
+    border: none;
+
+}
+
+.container-signup a{
+    text-decoration: none;
+    color: black;
+}
+
+.clinic, .patient{
+    width: 50%;
+    text-align: center;
+}
+
+.clinic img{
+    width: 80%;
+    border: 2px solid var(--yellow);
+    border-radius: 2rem;
+}
+.patient img{
+    width: 80%;
+    border: 2px solid var(--yellow);
+    border-radius: 2rem;
+}
+
+@media only screen and (max-width: 934px) {
+    .container-signup{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .clinic img{
+        width: 9rem;
+    }
+    .patient img{
+        width: 9rem;
+    }
+    .clinic, .patient{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
