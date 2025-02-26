@@ -41,7 +41,11 @@ const ClinicSchema = new mongoose.Schema({
   longitude: {
     type: Number,
     required: true
-  }
+  },
+  role:{ 
+    type: String, 
+    default: 'Clinic' 
+  },
 });
 
 ClinicSchema.pre("save", async function () {

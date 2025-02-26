@@ -24,6 +24,10 @@ const PatientSchema = new Schema({
         type: String,
         required: true
     },
+    role:{ 
+        type: String, 
+        default: 'Patient' 
+    },
 },{
     versionKey: false
 });

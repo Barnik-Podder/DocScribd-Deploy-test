@@ -25,8 +25,8 @@ function App() {
           <Route exact path="/signup" element={<ProtectedRoute><Signup /></ProtectedRoute>} />
           <Route exact path="/signup-patient" element={<ProtectedRoute><SignupPatient /></ProtectedRoute>} />
           <Route exact path="/signup-clinic" element={<ProtectedRoute><SignupClinic /></ProtectedRoute>} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
-          <Route path="/clinic/:id" element={<ClinicDetails/>} />
+          <Route exact path="/dashboard/:id" element={<Dashboard />} />
+          <Route exact path="/clinic/:id" element={<ClinicDetails/>} />
         </Routes>
       </AuthProvider>
     </div>

@@ -12,7 +12,7 @@
 
 .details .alignleft {
     text-align: left;
-    width: max-content;
+    width: fit-content;
 }
 
 iframe{

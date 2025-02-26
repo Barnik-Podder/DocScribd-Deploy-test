@@ -22,7 +22,6 @@ module.exports.Login = async (req, res, next) => {
       res.cookie("token", token, {
         withCredentials: true,
       });
-      res.cookie("role", role);
       res.status(201).json({ message: "User logged in successfully", success: true});
       next()
     }
@@ -39,7 +38,6 @@ module.exports.Login = async (req, res, next) => {
       res.cookie("token", token, {
         withCredentials: true,
       });
-      res.cookie("role", role);
       res.status(201).json({ message: "Clinic logged in successfully", success: true});
       next()
     }

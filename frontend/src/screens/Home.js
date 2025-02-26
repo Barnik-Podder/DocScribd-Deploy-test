@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import ClinicCard from "../components/ClinicCard";
 import axios from "axios";
 import "./Home.css";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   const [clinics, setClinics] = useState([]);
@@ -91,7 +92,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-
+      <ToastContainer/>
       {/* Search, Location Dropdown & Near Me Button */}
       <div className="search">
         <input

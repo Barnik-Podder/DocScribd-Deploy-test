@@ -5,11 +5,10 @@ import { CgProfile } from "react-icons/cg";
 import brandLogo from '../images/brand_logo.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext'; 
-import { ToastContainer } from "react-toastify";
 
 export default function Navbar() {
   const navRef = useRef();
-  const { username, logout } = useContext(AuthContext); 
+  const { username, id, logout } = useContext(AuthContext); 
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
@@ -19,7 +18,6 @@ export default function Navbar() {
   return (
     <>
       <header>
-        <ToastContainer />
         <div className="brand_logo">
           <Link to="/"><img src={brandLogo} draggable="false" className="brand_logo" alt="logo" /></Link>
         </div>
@@ -34,7 +32,7 @@ export default function Navbar() {
           {username ?
             (
               <div className='btn'>
-                <Link to="/dashboard"><CgProfile className='CgProfile'/></Link>
+                <Link to={"/dashboard/" + id}><CgProfile className='CgProfile'/></Link>
                 <p>Welcome {username}!</p>
                 <button className="login_btn butn" onClick={logout}>Logout</button>
               </div>
