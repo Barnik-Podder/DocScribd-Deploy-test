@@ -6,12 +6,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 
 
 export default function Login() {
   const navigate = useNavigate();
-  const [cookies, setCookies] = useCookies([]);
+  // const [cookies, setCookies] = useCookies([]);
   const [showPassword, setShowPassword] = useState(false);
   const [credentials, setCredentials] = useState({ role: "", email: "", password: "" });
   const togglePassword = () => {
@@ -27,7 +27,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API_URL}/login`,
+        `http://localhost:5000/login`,
         {
           ...credentials,
         },
@@ -35,7 +35,7 @@ export default function Login() {
       );
       const { success, message } = data;
       if (success) {
-        setCookies("role", credentials.role)
+        // setCookies("role", credentials.role)
         setTimeout(() => {
           navigate("/")
         }, 1000);

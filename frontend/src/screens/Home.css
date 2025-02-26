@@ -2,7 +2,7 @@
     width: 90vw;
     padding: 1rem;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     margin: auto;
 }
@@ -67,6 +67,10 @@ main .text .tagline em,main .text .tagline b{
 @media only screen and (max-width: 364px){
     main .text .bold_poetsen{
         font-size: 15vw;
+    }
+    .clinics{
+        padding: 0px;
+        margin: 0px 5px;
     }
 
 }

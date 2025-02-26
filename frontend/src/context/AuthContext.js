@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const endpoint = cookies.role === "Patient" ? "/authuser" : "/authclinic";
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_URL}${endpoint}`,
+          `http://localhost:5000${endpoint}`,
           {},
           { withCredentials: true }
         );
@@ -35,7 +35,6 @@ export const AuthProvider = ({ children }) => {
           toast.success(`Welcome back ${name} !`, { position: "top-center" });
 
         } else {
-          console.warn("Invalid status received. Removing token.");
           removeCookie("token");
           removeCookie("role");
         }
@@ -49,7 +48,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     verifyCookie();
-  }, [cookies.token, cookies.role, navigate, removeCookie]);
+  }, [cookies, navigate, removeCookie]);
 
   const logout = () => {
     removeCookie("token", { path: "/" });

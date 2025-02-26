@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './ClinicCard.css'
 
 
@@ -14,7 +15,7 @@ const ClinicCard = ({ clinic }) => {
         <p>Timing:
           <span className="pad-left">From: {clinic.clinicTimings.from}</span>
           <span className="pad-left">To: {clinic.clinicTimings.to}</span></p>
-        <button className="butn login_btn">BOOK!</button>
+        <Link to={'clinic/' + clinic._id} className="butn login_btn position">BOOK!</Link>
       </div>
     </>
   );

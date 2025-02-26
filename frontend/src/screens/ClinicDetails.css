@@ -1,0 +1,26 @@
+.details {
+    width: 98vw;
+    height: fit-content;
+    padding: 4rem 2rem;
+    margin: auto;
+    border-radius: 20px;
+    border: 3px solid var(--yellow);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10%;
+}
+
+.details .alignleft {
+    text-align: left;
+    width: max-content;
+}
+
+iframe{
+    height: 100%;
+    width: 80%;
+}
+
+.clinicDetails {
+    font-size: 20px;
+    margin: 20px 0;
+}

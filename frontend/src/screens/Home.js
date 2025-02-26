@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const fetchClinics = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/getclinic`);
+        const response = await axios.get(`http://localhost:5000/getclinic`);
         setClinics(response.data);
         setFilteredClinics(response.data);
         const uniqueLocations = [...new Set(response.data.map((clinic) => clinic.address))];
@@ -30,7 +30,7 @@ export default function Home() {
 
   // Real-time Filtering Logic
   useEffect(() => {
-    const filtered = clinics.filter((clinic) => {
+      const filtered = clinics.filter((clinic) => {
       const matchesName = clinic.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesLocation = locationFilter ? clinic.address === locationFilter : true;
       return matchesName && matchesLocation;

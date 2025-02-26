@@ -9,6 +9,11 @@
     flex-direction: column;
 }
 
+.position {
+    margin-top: auto;
+    text-align: center;
+}
+
 .pad-left{
     padding-left: 10px;
 }

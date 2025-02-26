@@ -34,7 +34,7 @@ export default function Navbar() {
           {username ?
             (
               <div className='btn'>
-                <CgProfile className='CgProfile'/>
+                <Link to="/dashboard"><CgProfile className='CgProfile'/></Link>
                 <p>Welcome {username}!</p>
                 <button className="login_btn butn" onClick={logout}>Logout</button>
               </div>
