@@ -10,16 +10,10 @@ const bookingRoutes = require("./Routes/BookingRoutes");
 
 
 
-const port = process.env.PORT;
+const port = process.env.PORT||5001
 
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 mongoDB();
 
