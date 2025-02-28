@@ -1,34 +1,41 @@
-const express = require("express");
+const express = require('express');
+const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoDB = require("./configs/db");
-require("dotenv").config();
+require('dotenv').config();
 const signup_patient = require("./Routes/Signup_patient");
 const bookingRoutes = require("./Routes/BookingRoutes");
-const serverless = require("serverless-http"); // ✅ Add this
 
-const app = express();
 
-app.use(cors());
+
+
+const port = process.env.PORT;
+
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
+
+mongoDB();
+
+app.get('/', (req, res) => {
+  res.send("You are trying to access the backend over http");
+});
+
 app.use(express.json());
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
+
 app.use(cookieParser());
 
-mongoDB(); // Connect to MongoDB
+app.use(express.json());
 
-// Routes
-app.use("/api", signup_patient);
-app.use("/api/bookings", bookingRoutes);
-
-// Test route
-app.get("/", (req, res) => {
-  res.send("Backend is running successfully!");
-});
-
-// Global Error Handler
-app.use((err, req, res, next) => {
-  console.error("Server Error:", err);
-  res.status(500).json({ message: "Internal Server Error", error: err.message });
-});
-
-// ✅ Export for Vercel serverless deployment
-module.exports = serverless(app);
+app.use("/", signup_patient);
+app.use("/bookings", bookingRoutes);
