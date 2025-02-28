@@ -1,0 +1,67 @@
+.bookingModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bookingContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .bookingContent h2 {
+    margin-bottom: 15px;
+  }
+  
+  .bookingContent label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .bookingContent input,
+  .bookingContent select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .confirmBtn, .cancelBtn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .confirmBtn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .confirmBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancelBtn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .cancelBtn:hover {
+    background-color: #c82333;
+  }
+  

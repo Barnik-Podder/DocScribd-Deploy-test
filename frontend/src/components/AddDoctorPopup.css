@@ -1,0 +1,74 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .popup-content input, select, option {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .popup-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .popup-content button[type="submit"] {
+    background: #28a745;
+    color: white;
+  }
+  
+  .popup-content button[type="button"] {
+    background: #dc3545;
+    color: white;
+  }
+
+  .doc-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .doc-top .close, .doc-top h2{
+    background-color: transparent;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+
+  

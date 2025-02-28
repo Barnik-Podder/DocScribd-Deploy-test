@@ -34,9 +34,10 @@ export const AuthProvider = ({ children }) => {
           setUsername(name);
           setRole(role);
           setId(id);
-          if (username !== "") {
-            toast.success(`Welcome back ${name} !`, { position: "top-center" });
-          }
+          // if (!username) {
+          // }
+          toast.success(`Welcome back ${name} !`, { position: "top-center" });
+
         } else {
           removeCookie("token");
           setUsername("");

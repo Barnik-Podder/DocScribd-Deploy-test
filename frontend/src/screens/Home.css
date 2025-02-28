@@ -14,9 +14,10 @@
 
 main{
     display: flex;
-    height: 70vh;
+    height: fit-content;
     justify-content: center;
     align-items: center;
+    margin: 1.5rem 0rem;
 }
 
 main .image .doctor_img{

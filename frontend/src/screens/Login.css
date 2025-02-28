@@ -48,7 +48,6 @@ input[type="password"], input[type="text"]{
     display: inline-block;
     padding: 0.88rem;
     border-radius: 0.5rem;
-    border: none;
     width: 90%;
 }
 
