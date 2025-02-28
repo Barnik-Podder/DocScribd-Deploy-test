@@ -15,12 +15,12 @@ app.use(cookieParser());
 mongoDB();
 
 // Define Routes
-app.use("/", signup_patient);
-app.use("/bookings", bookingRoutes);
+app.use("/api", signup_patient);
+app.use("/api/bookings", bookingRoutes);
 
 // Default Route
 app.get("/", (req, res) => {
-  res.send("You are trying to access the backend over HTTP");
+  res.send("Backend is running successfully!");
 });
 
 // Export as a Serverless Function for Vercel
