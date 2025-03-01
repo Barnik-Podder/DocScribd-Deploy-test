@@ -21,10 +21,10 @@ const ClinicDetails = () => {
     useEffect(() => {
         const fetchClinic = async () => {
             try {
-                const clinicResponse = await axios.get(`http://localhost:5000/getclinic?id=${id}`);
+                const clinicResponse = await axios.get(`${process.env.REACT_APP_API_URI}/getclinic?id=${id}`);
                 setClinic(clinicResponse.data);
 
-                const doctorResponse = await axios.get(`http://localhost:5000/getdoctorclinic?clinicId=${id}`);
+                const doctorResponse = await axios.get(`${process.env.REACT_APP_API_URI}/getdoctorclinic?clinicId=${id}`);
                 
                     setDoctors(doctorResponse.data);
                     setFilteredDoctors(doctorResponse.data);

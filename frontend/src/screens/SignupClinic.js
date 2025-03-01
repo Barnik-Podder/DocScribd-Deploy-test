@@ -35,7 +35,7 @@ export default function Signupclinic() {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                `http://localhost:5000/clinic`,
+                `${process.env.REACT_APP_API_URI}/clinic`,
                 {
                     ...credentials,
                 },

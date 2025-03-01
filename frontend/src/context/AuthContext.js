@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
       try {
         const { data } = await axios.post(
-          `http://localhost:5000/authuser`,
+          `${process.env.REACT_APP_API_URI}/authuser`,
           {},
           { withCredentials: true }
         );

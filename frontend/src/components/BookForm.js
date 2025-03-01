@@ -35,7 +35,7 @@ const BookingForm = ({ doctor, clinicId, onClose }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/bookings/book", {
+      const response = await axios.post(`${process.env.REACT_APP_API_URI}/bookings/book`, {
         patientId,
         doctorId: doctor._id,
         clinicId,

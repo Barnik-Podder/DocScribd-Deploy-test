@@ -23,16 +23,16 @@ function Dashboard() {
       try {
         if (role === "Patient") {
           // Fetch patient details
-          const response = await axios.get(`http://localhost:5000/getuser?id=${id}`);
+          const response = await axios.get(`${process.env.REACT_APP_API_URI}/getuser?id=${id}`);
           setUserData(response.data);
 
           // Fetch patient appointments
-          const appointmentResponse = await axios.get(`http://localhost:5000/bookings/patient/${id}`);
+          const appointmentResponse = await axios.get(`${process.env.REACT_APP_API_URI}/bookings/patient/${id}`);
           setAppointments(appointmentResponse.data);
 
           // Fetch clinic and doctor details for each appointment
           const clinicPromises = appointmentResponse.data.map(async (appointment) => {
-            const clinicRes = await axios.get(`http://localhost:5000/getclinic?id=${appointment.clinicId}`);
+            const clinicRes = await axios.get(`${process.env.REACT_APP_API_URI}/getclinic?id=${appointment.clinicId}`);
             return { ...appointment, clinic: clinicRes.data };
           });
 
@@ -41,17 +41,17 @@ function Dashboard() {
 
           // Fetch unique doctors for these appointments
           const doctorIds = [...new Set(updatedAppointments.map(a => a.doctorId))];
-          const doctorResponses = await Promise.all(doctorIds.map(id => axios.get(`http://localhost:5000/getdoctor?id=${id}`)));
+          const doctorResponses = await Promise.all(doctorIds.map(id => axios.get(`${process.env.REACT_APP_API_URI}/getdoctor?id=${id}`)));
           setDoctors(doctorResponses.map(res => res.data));
         }
 
         if (role === "Clinic") {
           // Fetch clinic details
-          const clinicResponse = await axios.get(`http://localhost:5000/getclinic?id=${id}`);
+          const clinicResponse = await axios.get(`${process.env.REACT_APP_API_URI}/getclinic?id=${id}`);
           setClinicData(clinicResponse.data);
 
           // Fetch doctors associated with this clinic
-          const doctorsResponse = await axios.get(`http://localhost:5000/getdoctorclinic?clinicId=${id}`);
+          const doctorsResponse = await axios.get(`${process.env.REACT_APP_API_URI}/getdoctorclinic?clinicId=${id}`);
           setDoctors(doctorsResponse.data);
         }
       } catch (err) {

@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchClinics = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/getclinic`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URI}/getclinic`);
         setClinics(response.data);
         setFilteredClinics(response.data);
         const uniqueLocations = [...new Set(response.data.map((clinic) => clinic.address))];
