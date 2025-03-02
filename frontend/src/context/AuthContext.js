@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(["token",{Domain:"docscribd-deploy-test.onrender.com"}]);
+  const [cookies, removeCookie] = useCookies(["token"]);
   const [username, setUsername] = useState("");
   const [role, setRole] = useState("");
   const [id, setId] = useState("");

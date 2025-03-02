@@ -23,7 +23,8 @@ module.exports.Login = async (req, res, next) => {
         withCredentials: true,
         httpOnly: true,
         secure:true,
-        sameSite: "None"
+        sameSite: "None",
+        domain: "docscribd.vercel.app"
       });
       res.status(201).json({ message: "User logged in successfully", success: true});
       next()
@@ -42,7 +43,8 @@ module.exports.Login = async (req, res, next) => {
         withCredentials: true,
         httpOnly: true,
         secure:true,
-        sameSite: "None"
+        sameSite: "None",
+        domain: "docscribd.vercel.app"
       });
       res.status(201).json({ message: "Clinic logged in successfully", success: true});
       next()
