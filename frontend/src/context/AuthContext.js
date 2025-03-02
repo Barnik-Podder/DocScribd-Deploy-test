@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([{domain:"docscribd.vercel.app"}]);
+  const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
   const [role, setRole] = useState("");
   const [id, setId] = useState("");
@@ -34,8 +34,6 @@ export const AuthProvider = ({ children }) => {
           setUsername(name);
           setRole(role);
           setId(id);
-          // if (!username) {
-          // }
           toast.success(`Welcome back ${name} !`, { position: "top-center" });
 
         } else {

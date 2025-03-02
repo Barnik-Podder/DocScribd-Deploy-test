@@ -19,14 +19,7 @@ module.exports.Login = async (req, res, next) => {
         return res.json({ message: 'Incorrect password or email' })
       }
       const token = createSecretToken(user._id);
-      res.cookie("token", token, {
-        withCredentials: true,
-        httpOnly: true,
-        secure:true,
-        sameSite: "None",
-        domain: "docscribd.vercel.app"
-      });
-      res.status(201).json({ message: "User logged in successfully", success: true});
+      res.status(201).json({ message: "User logged in successfully", success: true, token: token});
       next()
     }
     if(role === "Clinic"){
@@ -39,14 +32,7 @@ module.exports.Login = async (req, res, next) => {
         return res.json({ message: 'Incorrect password or email' })
       }
       const token = createSecretToken(clinic._id);
-      res.cookie("token", token, {
-        withCredentials: true,
-        httpOnly: true,
-        secure:true,
-        sameSite: "None",
-        domain: "docscribd.vercel.app"
-      });
-      res.status(201).json({ message: "Clinic logged in successfully", success: true});
+      res.status(201).json({ message: "Clinic logged in successfully", success: true, token: token});
       next()
     }
     
