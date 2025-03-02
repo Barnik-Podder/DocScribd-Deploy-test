@@ -39,3 +39,5 @@ app.use(express.json());
 
 app.use("/", signup_patient);
 app.use("/bookings", bookingRoutes);
+
+module.exports = app;
